@@ -1,8 +1,8 @@
-// components/Login.js
+// components/Register.js
 import React, { useState } from 'react';
 import './styles.css'; // Import the CSS file for styling
 
-function Login() {
+function Register() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [message, setMessage] = useState('');
@@ -11,7 +11,7 @@ function Login() {
     event.preventDefault();
 
     try {
-      const response = await fetch('http://localhost:3000/auth/login', {
+      const response = await fetch('http://localhost:3000/auth/register', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -22,10 +22,8 @@ function Login() {
       const result = await response.json();
 
       if (response.ok) {
-        setMessage('Login successful!');
-        // Optionally, redirect or save the token
-        localStorage.setItem('token', result.token);
-        // Redirect to another page or update the UI as needed
+        setMessage('Registration successful!');
+        // Redirect to login or home page if needed
       } else {
         setMessage(result.message);
       }
@@ -37,7 +35,7 @@ function Login() {
 
   return (
     <div className="container">
-      <h2>Login</h2>
+      <h2>Register</h2>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
           <label htmlFor="username">Username:</label>
@@ -59,11 +57,11 @@ function Login() {
             required
           />
         </div>
-        <button type="submit">Login</button>
+        <button type="submit">Register</button>
       </form>
       {message && <div id="message">{message}</div>}
     </div>
   );
 }
 
-export default Login;
+export default Register;

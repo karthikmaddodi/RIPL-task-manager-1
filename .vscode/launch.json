@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/riplblr32/RIPL-task-manager",
-      "program": "c:/Users/riplblr32/RIPL-task-manager/build/Debug/outDebug",
+      "cwd": "c:/Users/riplblr32/RIPL-task-manager/server",
+      "program": "c:/Users/riplblr32/RIPL-task-manager/server/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
