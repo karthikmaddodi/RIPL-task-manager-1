@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
-import './styles.css'; // Import the CSS file for styling
+import { useNavigate } from 'react-router-dom';
+import './styles.css';
 
 function Login() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [message, setMessage] = useState('');
+  const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -12,9 +14,7 @@ function Login() {
     try {
       const response = await fetch('http://localhost:3000/auth/login', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ username, password }),
       });
 
@@ -23,7 +23,8 @@ function Login() {
       if (response.ok) {
         setMessage('Login successful!');
         localStorage.setItem('token', result.token);
-        // Redirect to another page or update the UI as needed
+        // Redirect to dashboard based on user role (you might need additional logic to determine user roles)
+        navigate('/admin-dashboard');
       } else {
         setMessage(result.message);
       }
