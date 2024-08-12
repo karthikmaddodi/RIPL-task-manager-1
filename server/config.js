@@ -6,6 +6,7 @@ module.exports = {
     options: {
       encrypt: true,
       enableArithAbort: true,
+      trustServerCertificate: true // Trust the self-signed certificate
     },
   };
   
