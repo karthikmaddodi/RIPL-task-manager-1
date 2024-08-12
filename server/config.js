@@ -1,7 +1,7 @@
 module.exports = {
-    user: 'your_db_user',
-    password: 'your_db_password',
-    server: 'your_db_server',
+    user: 'sa',
+    password: 'admin',
+    server: '192.168.1.32',
     database: 'task_manager',
     options: {
       encrypt: true,
