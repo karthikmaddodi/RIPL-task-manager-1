@@ -1,4 +1,3 @@
-// components/Login.js
 import React, { useState } from 'react';
 import './styles.css'; // Import the CSS file for styling
 
@@ -23,7 +22,6 @@ function Login() {
 
       if (response.ok) {
         setMessage('Login successful!');
-        // Optionally, redirect or save the token
         localStorage.setItem('token', result.token);
         // Redirect to another page or update the UI as needed
       } else {
